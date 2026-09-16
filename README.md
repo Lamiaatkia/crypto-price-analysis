@@ -1,125 +1,84 @@
 # Crypto Price Analysis & Forecasting
 
-## 📌 Overview
+## Overview
 
-This project analyzes Bitcoin (BTC) and Ethereum (ETH) price data and compares three different forecasting approaches.
+This project analyzes Bitcoin (BTC) and Ethereum (ETH) price data from 2023–2025.
 
-The project was developed as part of the **Business Analytics & AI** course at Tokyo International University.
+The project was completed as part of the **Business Analytics & AI** course at **Tokyo International University**.
 
-## 🎯 Objective
+The analysis focuses on cryptocurrency price trends, volatility, correlation, and price forecasting.
 
-The objective was to analyze cryptocurrency price trends, volatility, and correlation, and evaluate forecasting models that could support the design of a two-tier Conservative/Growth investment product.
+## Objectives
 
-## 📊 Data Analysis
+- Analyze BTC and ETH price movements
+- Compare cryptocurrency volatility
+- Examine the relationship between BTC and ETH
+- Build models for cryptocurrency price forecasting
+- Evaluate model performance using MAE, RMSE, and MAPE
 
-The analysis focused on:
+## Data Analysis
 
-- Bitcoin (BTC)
-- Ethereum (ETH)
-- Price trends
+The project includes:
+
+- Descriptive statistics
 - Daily returns
-- Volatility
-- Correlation
-- Moving averages
+- 20-day and 50-day moving averages
+- 30-day rolling volatility
+- BTC–ETH return correlation
+- Rolling correlation
+- Extreme price movement analysis
 
-The project used 2023–2025 data for the analysis.
+## Forecasting Models
 
-## 🤖 Forecasting Models
+Three forecasting approaches were examined:
 
-Three models were compared:
+1. Naive forecasting
+2. ARIMA
+3. Linear Regression using lag and technical features
 
-### 1. Naive Baseline
+### Evaluation Metrics
 
-The next day's price is predicted using the current day's closing price.
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Percentage Error (MAPE)
 
-### 2. ARIMA(1,1,1)
+## Key Findings
 
-A time-series forecasting model using historical price information.
+The analysis found that:
 
-### 3. Linear Regression
+- BTC and ETH showed an overall upward movement during the analyzed period.
+- ETH showed higher volatility than BTC.
+- BTC and ETH had a strong positive correlation.
+- The Linear Regression model produced lower forecasting errors than the other models in the project evaluation.
 
-A regression model using engineered features:
+## Features Used
 
-- Lag 1
-- Lag 3
-- Lag 7
+The forecasting analysis used:
+
+- Previous-day closing price
+- 3-day lag
+- 7-day lag
 - 20-day moving average
 - 50-day moving average
 - 30-day rolling volatility
 
-## 📈 Model Evaluation
-
-The models were evaluated on a 90-day test set using:
-
-- MAE (Mean Absolute Error)
-- RMSE (Root Mean Squared Error)
-- MAPE (Mean Absolute Percentage Error)
-
-### BTC MAPE
-
-| Model | MAPE |
-|---|---:|
-| Naive Baseline | 3.43% |
-| ARIMA(1,1,1) | 2.63% |
-| Linear Regression | 2.56% |
-
-### ETH MAPE
-
-| Model | MAPE |
-|---|---:|
-| Naive Baseline | 9.66% |
-| ARIMA(1,1,1) | 7.75% |
-| Linear Regression | 7.43% |
-
-## 🔍 Key Findings
-
-The Linear Regression model produced the lowest reported MAE, RMSE, and MAPE among the three tested approaches for both BTC and ETH on the stated 90-day test set.
-
-The project also found:
-
-- BTC increased substantially over the analyzed period.
-- ETH showed higher average volatility than BTC.
-- BTC and ETH showed a positive correlation.
-- Extreme price movements presented challenges for forecasting models.
-
-## ⚠️ Limitations
-
-- The data used in the project was simulated to match the statistics used in the analysis.
-- Production implementation would require live market data.
-- Cryptocurrency markets can experience sudden changes that are difficult for historical models to capture.
-- The models did not include news or social-media sentiment.
-
-## 🔮 Future Improvements
-
-Potential improvements include:
-
-- Live cryptocurrency API data
-- On-chain metrics
-- Google Trends and sentiment data
-- RSI
-- MACD
-- Bollinger Bands
-- LSTM models
-- XGBoost
-- Cross-asset features
-- Value at Risk (VaR)
-
-## 🛠️ Tools & Concepts
+## Tools & Technologies
 
 - Python
-- Data Analysis
-- Exploratory Data Analysis (EDA)
-- Time Series Forecasting
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
 - ARIMA
-- Linear Regression
-- Feature Engineering
-- Model Evaluation
-- MAE
-- RMSE
-- MAPE
+- Jupyter Notebook / Google Colab
 
-## 🎓 Academic Project
+## Project Structure
 
-**Course:** Business Analytics & AI  
-**University:** Tokyo International University  
-**Year:** 2026
+```text
+crypto-price-analysis/
+├── README.md
+├── crypto-price-analysis.ipynb
+├── data/
+├── plots/
+└── presentation/
